@@ -8,14 +8,7 @@
 </head>
 <body>
 <!-- 
-○ Full Name (Text Input)
-○ Email Address (Email Input)
-○ Password (Password Input for account verification)
-○ Feedback Category (Dropdown/Select Input)
-○ Preferred Contact Method (Radio Buttons)
-○ Additional Features of Interest (Checkboxes)
-○ Comments (Textarea)
-○ Submit Button (to send the data)
+
 
 ○ Use appropriate <label> elements for each input to improve
 accessibility.
@@ -26,7 +19,47 @@ Bonus Challenge:
 ○ Include validation attributes like maxlength, minlength, or pattern
 where applicable.
 ○ Add the checked or selected attribute to provide default selection -->
+<form action = "/">
 
+ <fieldset>
+ <legend>Account: </legend>
+ <label for="fullname">Full name:</label>
+ <input type = "text" id="fullname" name="fullname" placeholder="John Doe" required pattern="^\w+ \w+$"><br>
+
+ <label for="email">Email:</label>
+ <input type = "email" id="email" name="email" placeholder="abc@email.com" required><br>
+
+ <label for="pass">Password:</label>
+ <input type = "password" id="pass" name="pass" placeholder="Password123!" required><br>
+ </fieldset>
+
+ <fieldset>
+ <legend>Feedback:</legend>
+ <label for="feed">Feedback:</label>
+ <select id="feed" name="feed">
+    <option value=1>1 Star</option>
+    <option value=2>2 Star</option>
+    <option value=3>3 Star</option>
+    <option value=4>4 Star</option>
+    <option value=5 selected>5 Star</option>
+ </select><br>
+
+<legend>Contact Method:</legend>
+<input type="radio" id="email" name="contact" value="email"><label for="email">Email</label><br>
+<input type="radio" id="phone" name="contact" value="phone"><label for="phone">Phone</label><br>
+<input type="radio" id="bird" name="contact" value="bird" checked><label for="bird">Carrier Pigeon</label><br>
+
+<legend>I want to be notified about:</legend>
+<input type="checkbox" id = "updates" name ="features" value="updates"><label for="updates">Updates</label><br>
+<input type="checkbox" id = "promos" name ="features" value="promos" checked><label for="promos">Promotional Events</label><br>
+<input type="checkbox" id = "links" name ="features" value="links" checked><label for="links">Phishing Links</label><br>
+
+<label for="thoughts">Final Thoughts:</label><br>
+<textarea id="thoughts" name="thoughts" rows="5" cols="20" placeholder="Wow, cool website!"></textarea><br>
+</fieldset>
+
+<input type="submit" value="Submit">
+</form>
     
 </body>
 </html>
